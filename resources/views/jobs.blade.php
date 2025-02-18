@@ -1,7 +1,7 @@
 <x-layout>
-<x-slot:heading>
+<x-slot name="heading">
     Job Listings
-</x-slot:heading>
+</x-slot>
 <ul> 
 @foreach ($jobs as $job)
    <li>

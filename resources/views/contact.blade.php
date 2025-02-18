@@ -1,7 +1,7 @@
 <x-layout>
-<x-slot:heading>
+<x-slot name="heading">
     Contact page
-</x-slot:heading> 
+</x-slot> 
   <h1> Hello fromt the contact page 
     it worked
   </h1>
