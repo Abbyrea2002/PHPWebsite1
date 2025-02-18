@@ -1,6 +1,6 @@
 <?php
  
- namespace App\Modules;
+ namespace App\Models;
 
  class Job{
     public static function all(): array
