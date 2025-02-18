@@ -21,8 +21,4 @@
         $product = new Product()
     }
   }
-
-
-
-
 ?>
