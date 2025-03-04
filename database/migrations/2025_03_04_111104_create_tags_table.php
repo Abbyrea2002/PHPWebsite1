@@ -16,13 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->timestamps();
         });
-    }
-    public function foreignIdFor($model, $column = null)
-    {
+    
+    
         Schema::create('job_tag', function (Blueprint $table) {
            $table->id();
-           $table->foreignIdFor(\App\Models\Job::class, 'job_listing_id');
-           $table->foreignIdFor(\App\Models\Job::class);
+           $table->foreignIdFor(\App\Models\Job::class, 'job_listing_id')->constrained()->cascadeOnDelete();
+           $table->foreignIdFor(\App\Models\Tag::class, 'tag_id')->constrained()->cascadeOnDelete();
            $table->timestamps();
         });
     }
@@ -33,5 +32,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('tags');
+        Schema::dropIfExists('job_tag');
     }
 };
