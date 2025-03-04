@@ -14,4 +14,3 @@ class Employer extends Model
         return $this->hasMany(Job::class);
     }
 }
-\\https://laracasts.com/series/30-days-to-learn-laravel-11/episodes/12?autoplay=true
