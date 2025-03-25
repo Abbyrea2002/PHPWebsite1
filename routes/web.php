@@ -11,6 +11,7 @@ Route::get('/home', function () {
     return view('home');
 
 });
+
 Route::get('/jobs', function ()  {
     $jobs = Job::with('employer')->simplePaginate(3);
 
@@ -18,9 +19,11 @@ Route::get('/jobs', function ()  {
          'jobs' => $jobs
     ]);
 });
+
 Route::get('/jobs/create', function(){
     return view('jobs.create');
 });
+
 Route::get('/jobs/{id}', function ($id) {
       
    $job = Job::find($id);
