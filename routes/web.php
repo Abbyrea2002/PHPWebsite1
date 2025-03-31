@@ -31,7 +31,7 @@ Route::get('/jobs/create', function(){
 Route::get('/jobs/{id}', function ($id) {
       
    $job = Job::find($id);
-        
+    
     return view('jobs.show', ['job' => $job]);
 });
 //store
@@ -67,18 +67,16 @@ Route::get('/jobs/{id}/edit', function ($id) {
     //authorization
 
     //find job 
-    $job = Job::find($id);
+    $job = Job::findOrFail($id);
 
-    $job->title = request('title');
-    $job->title = request('salary');
-    $job->save();
+
 
     $job->update([
         'title' =>request('title'),
         'salary' =>request('salary')
     ]);
 
-    return redirect('/jobs/',  $job->id);
+    return redirect('/jobs/' . $job->$id);
     
   
  });
