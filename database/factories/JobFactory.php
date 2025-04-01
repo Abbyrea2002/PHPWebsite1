@@ -20,7 +20,7 @@ class JobFactory extends Factory
         return [
             'title' => fake()->JobTitle(),
             'employer_id' => Employer::factory(),
-            'salary' => '£50,000,000 GB'
+            'salary' => '£50,000,000 GB',
         ];
     }
 }
