@@ -1,7 +1,7 @@
 <?php
 use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\RegsiterController;
 use App\Models\Job;
 
 
@@ -21,7 +21,9 @@ Route::view('/contact', 'contact');
 
 // });
 
-Route::resource('jobs', JobController::class)
+Route::resource('jobs', JobController::class);
+
+Route::get('/register', [RegisterController::class, 'create']);
 
 
 
